@@ -16,51 +16,71 @@ If player loses, console.log "Team rocket wins!"*/
 //i need to make the rounds so i can use a for loop
 //for the loop i need the score.
 
-let playerScore = 0
-let computerScore = 0
+// let playerScore = 0
+// let computerScore = 0
 
-function computerPlay() {
-   const pick = ["fire", "grass", "water"]
-   const randomchoice = pick[Math.floor(Math.random() * pick.length)]
-   //we need to connect pick to the final selection...
-   return randomchoice
-}
+// function computerPlay() {
+//     const pick = ["fire", "grass", "water"]
+//     const randomchoice = pick[Math.floor(Math.random() * pick.length)]
+//     //we need to connect pick to the final selection...
+//     return randomchoice
+// }
 
 
-function fullGame() {
-  while (playerScore <= 5 && computerScore <= 5) {
-    let playerSelection = prompt('Choose your pokemon type to beat Team Rocket!')
-    let computerSelection = computerPlay()
+// function fullGame() {
+//     while (playerScore <= 5 && computerScore <= 5) {
+//         let playerSelection = prompt('Choose your pokemon type to beat Team Rocket!')
+//         let computerSelection = computerPlay()
 
-    playerSelection = playerSelection.toLowerCase()
-    computerSelection = computerSelection.toLowerCase()
+//         playerSelection = playerSelection.toLowerCase()
+//         computerSelection = computerSelection.toLowerCase()
 
-    alert(playRound(playerSelection, computerSelection))
-  }
-  alert(winCondition())
-}
+//         alert(playRound(playerSelection, computerSelection))
+//     }
+//     alert(winCondition())
+// }
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection){
-        return "It's a tie!"
-    } else if ((playerSelection === "water" && computerSelection === "fire") || 
-    (playerSelection === "fire" && computerSelection === "grass") ||
-    (playerSelection === "grass" && computerSelection=== "water")) {
-        playerScore += 1
-        return "You win!"
-    } else {
-        computerScore += 1
-        return `You lose! ${computerSelection} beats ${playerSelection}`
-    }
-}
+// function playRound(playerSelection, computerSelection) {
+//     if (playerSelection === computerSelection) {
+//         return "It's a tie!"
+//     } else if ((playerSelection === "water" && computerSelection === "fire") ||
+//         (playerSelection === "fire" && computerSelection === "grass") ||
+//         (playerSelection === "grass" && computerSelection === "water")) {
+//         playerScore += 1
+//         return "You win!"
+//     } else {
+//         computerScore += 1
+//         return `You lose! ${computerSelection} beats ${playerSelection}`
+//     }
+// }
 
-function winCondition() {
-    if (playerScore > 5) {
-        return 'You beat Team Rocket!'
-    }
-    if (computerScore > 5) {
-        return 'Team Rocket wins!'
-    }
-}
-fullGame()
-console.log(`You: ${playerScore} Team Rocket: ${computerScore}`)
+// function winCondition() {
+//     if (playerScore > 5) {
+//         return 'You beat Team Rocket!'
+//     }
+//     if (computerScore > 5) {
+//         return 'Team Rocket wins!'
+//     }
+// }
+// fullGame()
+// console.log(`You: ${playerScore} Team Rocket: ${computerScore}`)
+
+
+//the random var generates random numbers from 1 to 3 inclusively. So for our logic, 1 = fire, 2 = grass, and 3 = water
+let random = Math.trunc(Math.random() * 3 + 1)
+console.log(random)
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        console.log(button.id)
+    })
+})
+
+
+const fireBtn = document.getElementById('fire')
+const waterBtn = document.getElementById('water')
+const grassBtn = document.getElementById('grass')
+
+
